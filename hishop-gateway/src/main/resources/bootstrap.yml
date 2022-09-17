@@ -1,0 +1,112 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hishop?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: wqde78?9gfhjk!
+  application:
+    name: hishop-gateway
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-idle: 8
+        min-idle: 8
+        max-active: 8
+        max-wait: -1
+    timeout: 30000
+
+  cloud:
+    nacos:
+      discovery:
+        group: DEFAULT_GROUP
+        server-addr: localhost:8848
+        namespace: hishop
+
+    loadbalancer:
+      cache:
+        enabled: false
+    gateway:
+      discovery:
+        locator:
+          enabled: true #表明gateway开启服务注册和发现的功能
+          lower-case-service-id: true #是将请求路径上的服务名配置为小写（因为服务注册的时候，注册中心会将服务名转成大写)
+      globalcors:
+        add-to-simple-url-handler-mapping: true #解决options请求被拦截问题
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+#            allowedHeaders: "*" # 允许在请求中携带的头信息
+#            allowCredentials: true # 是否允许携带cookie
+      routes:
+        - id: static
+          uri: lb://hishop-admin-web/static/ #网关路由到静态资源
+          order: -1
+          predicates:
+            - Path=/css/**, /js/**, /fonts/**, /icon/**, /lib/**, /static/**, /temp/**, /upload/**
+        - id: URL
+          uri: lb://hishop-admin-web/  #网关路由到用户服务后台服务hishop-admin-web
+          order: 10
+          predicates:
+            - Path=/{segment}/**
+        - id: front
+          uri: lb://hishop-front/  #网关路由到前端服务hishop-front
+          order: -1
+          predicates:
+            - Path=/member/**, /goods/**
+        - id: aliPay
+          uri: lb://hishop-order/  #网关路由到支付服务hishop-order
+          order: -1
+          predicates:
+            - Path=/alipay/*
+#
+#        - id: Swagger
+#          uri: lb://thymeleaf/  #
+#          predicates:
+#            - Path=/thymeleaf/v3/api-docs
+#          filters:
+#            - StripPrefix=1
+#            - IgnoreAuthFilter
+#
+#        - id: LoginService
+#          uri: lb://hishop-admin-web
+#          predicates:
+#            - Path=/login-api/**
+#          filters:
+#            - StripPrefix=1
+
+#feign:
+#  client:
+#    config:
+#      default:
+#        connect-timeout: 60000
+#        read-timeout: 60000
+#management
+#  endpoint.gateway.enabled=true # default value
+#  management.endpoints.web.exposure.include=gateway
+
+
+mybatis:
+  typeAliasesPackage: com.onlineshop.hishop.pojo
+  mapperLocations: classpath:mapper/*Mapper.xml
+
+management:
+  endpoint:
+    auditevents:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: gateway
+
+
+
+
+

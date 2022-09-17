@@ -1,0 +1,32 @@
+#�û���¼����ʱ��30����
+SESSION_EXPIRE: 1800
+#�û����ﳵ
+#ÉÌ³ÇÊ×Ò³»º´ækey
+PRODUCT_HOME: PRODUCT_HOME
+#ÉÌÆ·ÏêÇé»º´æÇ°×º
+PRODUCT_ITEM: PRODUCT_ITEM
+#ÉÌÆ·ÏêÇé»º´æ¹ýÆÚÊ±¼ä Ò»ÖÜ(Êµ¼Ê½¨Òé2Ð¡Ê±)
+ITEM_EXPIRE: 604800
+#µ¼º½À¸°å¿é±íid
+HEADER_PANEL_ID: 0
+#µ¼º½À¸°å¿é»º´ækey
+HEADER_PANEL: HEADER_PANEL
+#ÍÆ¼öÉÌÆ·°å¿é±íid
+RECOMEED_PANEL_ID: 6
+#ÍÆ¼öÉÌÆ·°å¿é»º´ækey
+RECOMEED_PANEL: RECOMEED_PANEL
+
+
+CART_PRE: CART
+#EMAIL_USERNAME: 1069199309@qq.com
+EMAIL_USERNAME: 2143728332@qq.com
+ServerPath: http://192.168.3.68:9999/#/
+ActiveReqUrl: active
+imgPath: http://192.168.3.181/user/img/logo.png
+redis.host: 192.168.3.181
+redis.port: 6379
+hadoop.host: hdfs://hadoop:9000
+server.host: http://192.168.3.181:88
+server.path: /user/img/
+CODE_PRX: CODE
+CODE_DATE: CODEDATE

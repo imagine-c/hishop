@@ -1,0 +1,46 @@
+server:
+  port: 8082
+## 数据库设
+spring:
+  application:
+    name: hishop-admin-web #服务名
+  cloud:
+     nacos:
+      discovery:
+        group: DEFAULT_GROUP
+        server-addr: localhost:8848
+        namespace: hishop
+  thymeleaf:
+    suffix: .html
+    prefix: classpath:/templates/
+    cache: false
+    servlet:
+      content-type: text/html
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-idle: 8
+        min-idle: 8
+        max-active: 8
+        max-wait: -1
+    timeout: 30000
+  session:
+    store-type: redis
+  main:
+    allow-bean-definition-overriding: true
+
+#feign:
+#  hystrix:
+#    enabled: true
+#
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          strategy: SEMAPHORE
+

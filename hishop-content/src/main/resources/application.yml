@@ -1,0 +1,52 @@
+
+server:
+  port: 8089
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+
+
+spring:
+  application:
+    name: hishop-content
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://imagine.cloudservice.com:3366/hishop?useUnicode=true&useSSL=false&characterEncoding=utf-8
+    username: root
+    password: wqde78?9gfhjk!
+    druid:
+      max-active: 20
+      min-idle: 5
+  servlet:
+    multipart:
+      max-file-size: 5MB
+  redis:
+    database: 0
+    host: imagine.cloudservice.com
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-idle: 8
+        min-idle: 8
+        max-active: 8
+        max-wait: -1
+    timeout: 30000
+  session:
+    store-type: redis
+
+  cloud:
+    nacos:
+      discovery:
+        group: DEFAULT_GROUP
+        server-addr: localhost:8848
+        namespace: hishop
+
+mybatis:
+  typeAliasesPackage: com.onlineshop.hishop.pojo
+  mapperLocations: classpath:mapper/*Mapper.xml
+
+

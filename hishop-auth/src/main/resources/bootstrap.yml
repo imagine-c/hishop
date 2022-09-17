@@ -1,0 +1,24 @@
+#server:
+#  port: 8080
+### 数据库设置
+#spring:
+##  datasource:
+##    driver-class-name: com.mysql.jdbc.Driver
+##    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+##    username: root
+##    password: 123456
+#  application:
+#    name: thymeleaf-provider #服务名
+#  cloud:
+#    nacos:
+#      discovery:
+#        group: DEFAULT_GROUP
+#        server-addr: localhost:8848
+#        namespace: nacos-test
+#
+## mybatis-plu设置
+##mybatis-plus:
+##  typeAliasesPackage: com.cloud.mybatis.pojo
+##  mapper-locations: classpath*:mapper/*Mapper.xml #扫描的xml文件路径
+##  configuration:
+##    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #控制台日志输出

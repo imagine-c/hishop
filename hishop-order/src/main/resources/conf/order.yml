@@ -1,0 +1,3 @@
+CART_PRE: CART
+notify_url: http://jackjorker.top:8080/alipay/alipayNotifyNotice.action
+return_url: http://jackjorker.top/#/order/paysuccess

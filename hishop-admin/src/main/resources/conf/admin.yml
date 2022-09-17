@@ -1,0 +1,23 @@
+#��Ʒ���黺��ǰ׺
+PRODUCT_ITEM: PRODUCT_ITEM
+#�������ñ�id
+BASE_ID: 1
+
+#֧����֤�������� ��QQ����Ϊ��
+EMAIL_USERNAME: 2143728332@qq.com
+ADMIN_EMAIL: 2143728332@qq.com
+imgPath: http://192.168.3.181/user/img/logo.png
+
+activemq.broker-url: tcp://localhost:61616
+activemq.username: admin
+activemq.password: admin
+activemq.queue: itemQueue
+activemq.topic: itemTopic
+
+hadoop.host: hdfs://hadoop:9000
+server.host: http://192.168.3.68
+server.path: /user/img/
+
+host=localhost
+port=8090
+version=1.1.0
