@@ -27,7 +27,7 @@
 
 - 现在许多购物系统都是用SSH或者是SSM写的，想用**Spring Boot** + **Spring Cloud**的微服务架构进行项目的构建，里面许多技术主要是**验证自己的学习成果**，可能有一些不合理的地方，大家可以**根据自己的需求启动相关服务**。本项目是一个基于**Spring Boot**、**Spring Cloud**以及 **Vue** 技术的入门级项目，可以很好的学习相关技术。
 
-- Spring Boor、Dubbo版请查看master分支。
+- Spring Boot、Dubbo版请查看master分支。
 
 ## 基于微服务的前后端分离购物系统
 - 后台管理系统
